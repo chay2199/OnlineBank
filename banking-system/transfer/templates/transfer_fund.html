@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} {{ title }} | {{ block.super }}{% endblock title %}
+
+{% block content %}
+{% include "core/messages.html" %}
+<div class="alert alert-info" role="alert"><h4>Your Current Account Balance is {{request.user.balance}} $</h4></div>
+    <h3>Transfer Fund:</h3>
+    
+
+    <form action="/transfer/" method="post">
+        {% csrf_token %}
+        <div class="form-group">Enter Email of recipient:<br><br>
+            {{ form.receiver }}
+        </div>
+        <div class="form-group">Enter amount to be transferred:<br><br>
+            {{ form.amount }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <h3></h3>
+    
+{% endblock %}
