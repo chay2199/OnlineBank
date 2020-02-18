@@ -23,7 +23,7 @@ from core.views import home, about,GeneratePdf
 
 urlpatterns = [
     # admin
-    url(r'^admin/', admin.site.urls),
+    url(r'^super_secret/', admin.site.urls),
     # Accounts
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     # core
@@ -32,7 +32,10 @@ urlpatterns = [
     url(r'^GeneratePdf/$', GeneratePdf, name='GeneratePdf'),
     # transactions
     url(r'^', include('transactions.urls', namespace='transactions')),
+    #transfers
     url(r'^', include('transfer.urls', namespace='transfer')),
+    #adminMask
+    url(r'^',include('adminMask.urls',namespace='adminMask')),
 ]
 
 

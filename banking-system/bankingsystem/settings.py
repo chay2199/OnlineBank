@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'core',
     'transactions',
     'transfer',
+    'adminMask',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'ipaddr.middleware.IPAddrMiddleware',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
