@@ -5,8 +5,8 @@
 {% block content %}
 {% include "core/messages.html" %}
 <div class="alert alert-info" role="alert"><h4>Your Current Account Balance is {{request.user.balance}} /-</h4></div>
-    <h3>Transfer Fund:</h3>
-    
+    <h3>Foreign Funds Transfer:</h3>
+
 
     <form action="/transfer/" method="post">
         {% csrf_token %}
@@ -19,5 +19,5 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <h3></h3>
-    
+
 {% endblock %}

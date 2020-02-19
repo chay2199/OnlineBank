@@ -7,12 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{% block title %} Banking System {% endblock title %}</title>
+    <style>
+       /* unvisited link */
+        a:link {
+          color: black;
+        }
 
+        /* visited link */
+        a:visited {
+          color: black;
+        }
+        /* mouse over link */
+        a:hover {
+          color: black;
+        }
+
+        /* selected link */
+        a:active {
+          color: black;
+        }
+    </style>
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
 
-  <body>
+  <body style="background-image: url('../../../static/banking-system/images/pig.jpg'); background-size: cover; font-family: 'DejaVu Sans'">
 {% include "core/navbar.html" %}
 
 <div class="container" style="padding-top: 60px;">
