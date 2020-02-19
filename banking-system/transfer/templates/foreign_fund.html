@@ -10,10 +10,29 @@
 
     <form action="/transfer/" method="post">
         {% csrf_token %}
-        <div class="form-group">Enter Email of recipient:<br><br>
+        <div class="form-group">Enter email of the recipient:<br><br>
             {{ form.receiver }}
         </div>
+        <div class="form-group">Please select the required currency:<br><br>
+            <fieldset>
+                <p>
+                    <label>Currency</label>
+                    <select id = "myList">
+                        <option value = "1">USD</option>
+                        <option value = "2">EUR</option>
+                        <option value = "3">GBP</option>
+                        <option value = "4">AUS</option>
+                        <option value = "5">CAD</option>
+                        <option value = "6">HKD</option>
+                        <option value = "7">CHF</option>
+                    </select>
+                </p>
+            </fieldset>
+        </div>
         <div class="form-group">Enter amount to be transferred:<br><br>
+            {{ form.amount }}
+        </div>
+        <div class="form-group">Rupee equivalent:<br><br>
             {{ form.amount }}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

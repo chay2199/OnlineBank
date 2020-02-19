@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import User, AccountDetails, UserAddress
+from .models import User, AccountDetail, UserAddresse
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -23,7 +23,7 @@ class UserRegistrationForm(UserCreationForm):
 class AccountDetailsForm(forms.ModelForm):
 
     class Meta:
-        model = AccountDetails
+        model = AccountDetail
         fields = [
             'gender',
             'birth_date',
@@ -34,7 +34,7 @@ class AccountDetailsForm(forms.ModelForm):
 class UserAddressForm(forms.ModelForm):
 
     class Meta:
-        model = UserAddress
+        model = UserAddresse
         fields = [
             'street_address',
             'city',

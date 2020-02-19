@@ -28,7 +28,7 @@ def transfer_fund(request):
 	    transfer.save()
 	    if transfer.sender.account.balance<transfer.amount:
 	    	messages.success(
-            request, 'You cannot Withdraw more than your balance {} $.'.format(transfer.amount)
+            request, 'You cannot Withdraw more than your balance {} /-.'.format(transfer.amount)
         	)
         	return redirect("home")
 	        # adds users deposit to balance.
@@ -36,7 +36,7 @@ def transfer_fund(request):
 	    transfer.receiver.account.balance += transfer.amount
 	    transfer.sender.account.save()
 	    transfer.receiver.account.save()
-	    messages.success(request, 'You Have Deposited {} $.'
+	    messages.success(request, 'You Have Deposited {} /-.'
 	                         .format(transfer.amount))
 	    return redirect("home")
 
@@ -54,14 +54,14 @@ def foreign_fund(request):
 
 	    transfer = form.save(commit=False)
 	    transfer.sender = request.user
-	    receiver_data= transfer.receiver
-	    email=form.cleaned_data.get("receiver")
-	    transfer.receiver=email
-	    transfer.amount=form.cleaned_data.get("amount")
+	    receiver_data = transfer.receiver
+	    email = form.cleaned_data.get("receiver")
+	    transfer.receiver = email
+	    transfer.amount = form.cleaned_data.get("amount")
 	    transfer.save()
 	    if transfer.sender.account.balance<transfer.amount:
 	    	messages.success(
-            request, 'You cannot Withdraw more than your balance {} $.'.format(transfer.amount)
+            request, 'You cannot Withdraw more than your balance {} /-.'.format(transfer.amount)
         	)
         	return redirect("home")
 	        # adds users deposit to balance.
@@ -69,7 +69,7 @@ def foreign_fund(request):
 	    transfer.receiver.account.balance += transfer.amount
 	    transfer.sender.account.save()
 	    transfer.receiver.account.save()
-	    messages.success(request, 'You Have Deposited {} $.'
+	    messages.success(request, 'You Have Deposited {} /-.'
 	                         .format(transfer.amount))
 	    return redirect("home")
 

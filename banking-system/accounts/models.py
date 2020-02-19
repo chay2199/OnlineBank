@@ -68,7 +68,7 @@ class User(AbstractUser):
         return None
 
 
-class AccountDetails(models.Model):
+class AccountDetail(models.Model):
     GENDER_CHOICE = (
         ("M", "Male"),
         ("F", "Female"),
@@ -102,7 +102,7 @@ class AccountDetails(models.Model):
         return str(self.account_no)
 
 
-class UserAddress(models.Model):
+class UserAddresse(models.Model):
     user = models.OneToOneField(
         User,
         related_name='address',
