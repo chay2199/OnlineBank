@@ -18,7 +18,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
-from core.views import home, about,GeneratePdf
+from core.views import home, about, generate_pdf
 
 
 urlpatterns = [
@@ -29,7 +29,7 @@ urlpatterns = [
     # core
     url(r'^$', home, name='home'),
     url(r'^about/$', about, name='about'),
-    url(r'^GeneratePdf/$', GeneratePdf, name='GeneratePdf'),
+    url(r'^GeneratePdf/$', generate_pdf, name='generate_pdf'),
     # transactions
     url(r'^', include('transactions.urls', namespace='transactions')),
     #transfers
