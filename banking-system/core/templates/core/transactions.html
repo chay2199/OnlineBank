@@ -26,7 +26,11 @@
         <a class="btn btn-success" href="{% url 'transactions:deposit' %}">Deposit</a>
         <a class="btn btn-danger" href="{% url 'transactions:withdrawal' %}">Withdraw</a>
         <a class="btn btn-success" href="{% url 'transfer:fund_transfer' %}">Transfer</a>
-        <a class="btn btn-danger" href="{% url 'transfer:fund_transfer' %}" style="margin-top: 7px">Request Checkbook</a>
+        <a class="btn btn-success" style="margin-top: 7px" onclick="document.getElementById('popup').style.display='block'">Request Checkbook</a>
+            <div id="popup">Checkbook is send to your permanent address!
+                <a class="btn btn-success" onclick="document.getElementById('popup').style.display='none'">Hide</a>
+            </div>
+        </a>
         <a class="btn btn-danger" href="{% url 'transfer:foreign_fund' %}" style="margin-top: 7px">Foreign Funds Transfer</a>
     </div>
   </div>
